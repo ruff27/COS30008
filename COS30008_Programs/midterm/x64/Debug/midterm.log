@@ -1,0 +1,5 @@
+﻿  KeyProvider.cpp
+  VigenereForwardIterator.cpp
+D:\COS30008\Programs\midterm\VigenereForwardIterator.cpp(43,43): warning C4267: 'initializing': conversion from 'size_t' to 'char', possible loss of data
+  Generating Code...
+  midterm.vcxproj -> D:\COS30008\Programs\midterm\x64\Debug\midterm.exe

@@ -1,0 +1,187 @@
+Marking Summary:
+
+Submission files:
+PS2_Ruffin.pdf; pdf document
+FibonacciSequenceGenerator.cpp; primary source file
+FibonacciSequenceIterator.cpp; primary source file
+
+ 
+Compiling sources: 
+FibonacciSequenceGenerator.cpp
+FibonacciSequenceIterator.cpp
+ 
+ 
+Build successful. 
+Marking guide for submission of "Problem Set 2":
+
+  Processing Problem 1 [40 marks]:
+
+    Analyzing FibonacciSequenceGenerator::FibonacciSequenceGenerator(const std::string& aID) noexcept [6 marks]
+    Validation passed
+    Check: Member initializer for fID [Ok]
+    Check: Member initializer for fPrevious(0) [Ok]
+    Check: Member initializer for fCurrent(1) [Ok]
+    Check: Constructor body empty [Ok]
+
+    Analyzing string& FibonacciSequenceGenerator::id() const noexcept [2 marks]
+    Validation passed
+    Average running time (per 100): 111.167us
+    Running time within expected bounds.
+
+    Check: Return ID [Ok]
+
+    Analyzing const long long& FibonacciSequenceGenerator::operator*() const noexcept [2 marks]
+    Validation passed
+    Average running time (per 100): 54.8333us
+    Running time within expected bounds.
+
+    Check: Return current number [Ok]
+
+    Analyzing FibonacciSequenceGenerator::operator bool() const noexcept [4 marks]
+    Validation passed
+    Average running time (per 100): 54.25us
+    Running time within expected bounds.
+
+    Check: Boolean conversion based on hasNext() [Ok]
+    Check: Return statement [Ok]
+
+    Analyzing void FibonacciSequenceGenerator::reset() noexcept [4 marks]
+    Validation passed
+    Average running time (per 100): 53.4167us
+    Running time within expected bounds.
+
+    Check: Reset previous [Ok]
+    Check: Reset current [Ok]
+
+    Analyzing bool FibonacciSequenceGenerator::hasNext() const noexcept [8 marks]
+    Validation passed
+    Average running time (per 100): 54.0833us
+    Running time within expected bounds.
+
+    Check: Calculate next value
+      Add current and previous.
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 2
+    Check: Test for negative value
+      Include a test for negative value.
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 2
+    Check: Return statement [Ok]
+
+    Analyzing void FibonacciSequenceGenerator::next() noexcept [12 marks]
+    Validation passed
+    Average running time (per 100): 54.5us
+    Running time within expected bounds.
+
+    Check: Has next element test
+      Test if there is a next number.
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 2
+    Check: Is '#include <cassert>' present?
+      Explicit include of 'cassert' is required.
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 2
+    Check: Method next() requires an assertion test
+      Assertion test 'hasNext()' missing.
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 2
+    Check: Calculate next value [Ok]
+    Check: Set next value [Ok]
+    Check: Set current value [Ok]
+
+  Score Problem 1: 30/40
+
+
+  Processing Problem 2 [70 marks]:
+
+    Analyzing FibonacciSequenceIterator::FibonacciSequenceIterator( const FibonacciSequenceGenerator& a, long long b) noexcept [4 marks]
+    Validation passed
+    Check: Member initializer for fSequenceObject [Ok]
+    Check: Member initializer for fIndex [Ok]
+    Check: Sequence object reset
+      Sequence object must be reset to first Fibonacci number.
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 2
+
+    Analyzing const long long& FibonacciSequenceIterator::operator*() const noexcept [4 marks]
+    Validation passed
+    Average running time (per 100): 60.625us
+    Running time within expected bounds.
+
+    Check: Return current Fibonacci number [Ok]
+
+    Analyzing FibonacciSequenceIterator& FibonacciSequenceIterator::operator++() noexcept [12 marks]
+    Validation passed
+    Average running time (per 100): 112.458us
+    Running time within expected bounds.
+
+    Check: Test if next number exists
+      Use test hasNext() to test if another Fibonacci number can be computed.
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 4
+    Check: Advance Fibonacci number if it exists [Ok]
+    Check: Advance fIndex [Ok]
+    Check: Return updated iterator [Ok]
+
+    Analyzing FibonacciSequenceIterator FibonacciSequenceIterator::operator++(int) noexcept [10 marks]
+    Validation passed
+    Average running time (per 100): 94.4583us
+    Running time within expected bounds.
+
+    Check: Create copy of iterator [Ok]
+    Check: Forward to prefix increment operator. [Ok]
+    Check: Reimplementation of prefix logic [Ok]
+    Check: Return old iterator [Ok]
+    Check: Incorrect return updated iterator [Ok]
+
+    Analyzing bool FibonacciSequenceIterator::operator==(const FibonacciSequenceIterator& aOther) const noexcept [10 marks]
+    Validation passed
+    Average running time (per 100): 55.8333us
+    Running time within expected bounds.
+
+    Check: Return result [Ok]
+    Check: Check IDs.
+      Compare equivalence of iterator IDs.
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 2
+    Check: Check indices. [Ok]
+    Check: Connect Boolean expressions
+      Result is a conjunction (&&).
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 2
+
+    Analyzing FibonacciSequenceIterator FibonacciSequenceIterator::begin() const noexcept [16 marks]
+        Mismatch in sequence object: 
+        Mismatch in fPrevious: 0 != 20365011074
+        Mismatch in fCurrent: 1 != 32951280099
+
+      Validation failed; Suggested deduction of marks: 4
+    Check: Create copy of iterator [Ok]
+    Check: Reset copy
+      Copy must be reset to start.
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 0
+    Check: New start at 1 [Ok]
+    Check: return copy [Ok]
+
+    Analyzing FibonacciSequenceIterator FibonacciSequenceIterator::end() const noexcept [16 marks]
+    Validation passed
+    Average running time (per 100): 92.2917us
+    Running time within expected bounds.
+
+    Check: Create copy of iterator [Ok]
+    Check: Reset copy [Ok]
+    Check: End index [Ok]
+    Check: Use of loop to advance copy [Ok]
+    Check: Limit is 93 [Ok]
+    Check: return copy [Ok]
+
+  Score Problem 2: 56/70
+
+
+Score Problem Set 2: 86/110
+
+This report suggests a score based on expected solution patterns.
+You may have used a different approach that yields a correct result.
+Please speak to your tutor to review the outcomes.
+

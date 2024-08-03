@@ -1,0 +1,203 @@
+Marking Summary:
+
+Submission files:
+ProblemSet1_Ruffin_103840173.pdf; pdf document
+Vector3D_PS1.cpp; primary source file
+Matrix3x3_PS1.cpp; primary source file
+Polygon_PS1.cpp; primary source file
+
+ 
+Compiling sources: 
+Matrix3x3_PS1.cpp
+Polygon_PS1.cpp
+Vector3D_PS1.cpp
+ 
+ 
+Build successful. 
+Marking guide for submission of "Problem Set 1":
+
+  Processing Problem 1 [26 marks]:
+
+    Analyzing string Vector3D::toString() const noexcept [26 marks]
+    Validation passed
+    Average running time (per 100): 1329.42us
+    Running time within expected bounds.
+
+    Check: Is '#include <sstream>' present? [Ok]
+    Check: Declaration of an object of type std::streamstream [Ok]
+    Check: Extract result string via stringstream::str() [Ok]
+    Check: Opening bracket ('<< "["') [Ok]
+    Check: Closing bracket ('<< "]"') [Ok]
+    Check: Use of round function (3 times). [Ok]
+    Check: Scaling of x ('round( x() * 10000.0f )'). [Ok]
+    Check: Scaling of y ('round( y() * 10000.0f )'). [Ok]
+    Check: Scaling of w ('round( w() * 10000.0f )'). [Ok]
+    Check: Rescale rounded values ('.../ 10000.0f'). [Ok]
+    Check: No fixed set precision. [Ok]
+    Check: No system-specific newline. [Ok]
+
+  Score Problem 1: 26/26
+
+
+  Processing Problem 2 [98 marks]:
+
+    Analyzing Matrix3x3 Matrix3x3::operator*( const Matrix3x3& aOther ) const noexcept [26 marks]
+    Validation passed
+    Average running time (per 1000): 754.708us
+    Running time within expected bounds.
+
+    Check: Minimum copies of rows (via calls to row())
+      Incorrect number of row copies.
+        Expected 3 use(s), detected 0 use(s).
+        Suggested deduction of marks: 3
+    Check: Minimum copies of colums (via calls to column())
+      Incorrect number of column copies.
+        Expected 3 use(s), detected 9 use(s).
+        Suggested deduction of marks: 3
+    Check: Direct access of rows via member variable fRows
+      Access matrix data and via row() and column().
+        Expected 0 use(s), detected 9 use(s).
+        Suggested deduction of marks: 0
+    Check: Utilization of dot-product to compute (FG)ij (9 times) [Ok]
+    Check: Construction of Vector3D row vectors [Ok]
+    Check: Construction of Matrix3x3 result matrix [Ok]
+    Check: Return statement  [Ok]
+
+    Analyzing float Matrix3x3::det() const noexcept [22 marks]
+    Validation passed
+    Average running time (per 1000): 93.7917us
+    Running time within expected bounds.
+
+    Check: Minimum copies of rows (via calls to row())
+      Incorrect number of row copies.
+        Expected 3 use(s), detected 0 use(s).
+        Suggested deduction of marks: 3
+    Check: Direct access of rows via member variable fRows
+      Access matrix data and via row().
+        Expected 0 use(s), detected 15 use(s).
+        Suggested deduction of marks: 0
+    Check: Possible initialization of result with 0.0f
+      Result should be initialized with a 0.0f. Next calculate determinate.
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 0
+
+    Analyzing bool Matrix3x3::hasInverse() const noexcept [4 marks]
+    Validation passed
+    Average running time (per 1000): 95.2917us
+    Running time within expected bounds.
+
+    Check: Utilization of det() function [Ok]
+    Check: Comparison with 0.0f [Ok]
+    Check: Test floats with != [Ok]
+    Check: Function hasInverse() does not trigger an assertion [Ok]
+
+    Analyzing Matrix3x3 Matrix3x3::transpose() const noexcept [8 marks]
+    Validation passed
+    Average running time (per 1000): 148.5us
+    Running time within expected bounds.
+
+    Check: Minimum copies of columns (via calls to column())
+      Incorrect number of column copies.
+        Expected 3 use(s), detected 0 use(s).
+        Suggested deduction of marks: 3
+    Check: Construction of Matrix3x3 result matrix [Ok]
+    Check: Return statement  [Ok]
+    Check: Direct access of rows via member variable fRows
+      Access matrix data and via column().
+        Expected 0 use(s), detected 9 use(s).
+        Suggested deduction of marks: 0
+
+    Analyzing Matrix3x3 Matrix3x3::inverse() const noexcept [24 marks]
+    Validation passed
+    Average running time (per 1000): 332.042us
+    Running time within expected bounds.
+
+    Check: Utilization of det() function [Ok]
+    Check: Is '#include <cassert>' present? [Ok]
+    Check: Method inverse() requires an assertion test [Ok]
+    Check: Method inverse() does not throw an exception [Ok]
+    Check: Direct access of rows via member variable fRows
+      Access matrix data and via row().
+        Expected 0 use(s), detected 36 use(s).
+        Suggested deduction of marks: 0
+    Check: Reciprocal of determinate [Ok]
+    Check: Minimum copies of rows (via calls to row())
+      Incorrect number of row copies.
+        Expected 3 use(s), detected 0 use(s).
+        Suggested deduction of marks: 0
+    Check: Construction of Vector3D row vectors [Ok]
+    Check: Construction of Matrix3x3 result matrix [Ok]
+    Check: Return statement  [Ok]
+
+    Analyzing std::ostream& operator<<( std::ostream& aOStream, const Matrix3x3& aMatrix ) [8 marks]
+    Validation passed
+    Average running time (per 0): 0us
+    Running time within expected bounds.
+
+    Check: Minimum copies of rows (via calls to row() or access to fRow) [Ok]
+    Check: Opening bracket present [Ok]
+    Check: Closing bracket present [Ok]
+    Check: Two commas present
+      Use 2 "," (no for-loop).
+        Expected 2 use(s), detected 1 use(s).
+        Suggested deduction of marks: 0
+    Check: Return statement [Ok]
+    Check: Use toString() method
+      Three instances of toString() required (no for-loop).
+        Expected 3 use(s), detected 1 use(s).
+        Suggested deduction of marks: 0
+    Check: Use formatted output
+      Seven instances of '<<' required.
+        Expected 7 use(s), detected 4 use(s).
+        Suggested deduction of marks: 0
+    Check: Use of for-loop
+      For-statement not required.
+        Expected 0 use(s), detected 1 use(s).
+        Suggested deduction of marks: 2
+    Check: No system-specific newline. [Ok]
+
+  Score Problem 2: 84/98
+
+
+  Processing Problem 3 [32 marks]:
+
+    Analyzing float Polygon::getSignedArea() const noexcept [22 marks]
+    Validation passed
+    Average running time (per 1000): 122.083us
+    Running time within expected bounds.
+
+    Check: Initialization of result with 0.0f [Ok]
+    Check: Expensive use of modulus operator
+      Use of modulus operator detected. Restructure code
+        Expected 0 use(s), detected 1 use(s).
+        Suggested deduction of marks: 4
+    Check: Use of cross product (sholace formula) [Ok]
+    Check: Use of float literal for 1/2 of area [Ok]
+
+    Analyzing Polygon Polygon::transform( const Matrix3x3& aMatrix ) const noexcept [10 marks]
+    Validation passed
+    Average running time (per 1000): 222.375us
+    Running time within expected bounds.
+
+    Check: Initialization of result (with copy of this object) [Ok]
+    Check: Static cast to Vector2D (static_cast<Vector2D>()
+      Type cast static_cast<Vector2D>() expected.
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 2
+    Check: Return of transformed polygon. [Ok]
+    Check: Explicit type conversion to Vector3D. [Ok]
+    Check: Update of result vertices. [Ok]
+    Check: Multiply source vertices with matrix.
+      Use source vertices and matrix multiplication with vectors.
+        Expected 1 use(s), detected 0 use(s).
+        Suggested deduction of marks: 1
+
+  Score Problem 3: 25/32
+
+
+Score Problem Set 1: 135/156
+
+This report suggests a score based on expected solution patterns.
+You may have used a different approach that yields a correct result.
+Please speak to your tutor to review the outcomes.
+
